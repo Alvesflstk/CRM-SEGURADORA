@@ -1,0 +1,34 @@
+:root{
+
+    --color-padrao-background:#15161A;
+    --color-padrao-font:#ffffff;
+    --color-hover:#83c5be;
+    --font-padrao-application:"JetBrains Mono";
+}
+
+
+.config-header{
+    font-family: var(--font-padrao-application);
+    color: #caf0f8;
+}
+
+
+.config-planos{
+    font-family: var(--font-padrao-application);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #ffffff;
+}
+.price-planos p{
+    margin: 0;
+}
+.price-planos.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5); 
+}
+
+
+input[type='text']{
+    border: none;
+    width: 70%;
+}

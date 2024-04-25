@@ -1,0 +1,141 @@
+{% include "base.html" %} {% block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/vendaspl.css') }}">
+
+<div class="container">
+<div class="container-header-buttons">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#meuModal">
+      <i class="ph-bold ph-plus"></i> <span>Venda</span>
+</button>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#sangria">
+      <i class="ph-bold ph-plus"></i> <span>Investimento</span>
+</button>
+</div>
+
+<div class="container">
+    <div class="button-action">
+        <div class="modal fade" id="meuModal" tabindex="-1" role="dialog" aria-labelledby="modalTitulo" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content bg-dark text-white">
+                <div class="modal-header border-0">
+                  <h5 class="modal-title" id="modalTitulo">Registro de Venda</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="close" onclick="endModal()">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  
+                    <input type="text" class="form-control bg-dark text-white" placeholder="Nome Cliente" id="nameCliente">
+                    <input type="text" class="form-control bg-dark text-white" placeholder="Vendedor" id="nameVendedor">
+                    <input type="datetime-local" name="horarioVenda" id="horarioVenda" class="form-control bg-dark text-white">
+                    <select class="form-select bg-dark text-white" aria-label="Default select example" id="planoOption">
+                      <option selected>Plano</option>
+                      <option value="1">Essencial</option>
+                      <option value="2">Flex</option>
+                    </select>
+                  
+                </div>
+                <div class="modal-footer border-0">
+                  <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+<div class="container">
+    <div class="button-action">
+        <div class="modal fade" id="sangria" tabindex="-1" role="dialog" aria-labelledby="modalTitulo" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content modal-dark bg-dark">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modalTitulo">Registro de Investimento</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <select class="form-select bg-dark text-white" aria-label="Default select example" id="Area">
+                    <option selected>Area de Investimento</option>
+                    <option value="1">Software</option>
+                    <option value="2">Mobilha</option>
+                    <option value="2">Tráfego</option>
+                    <option value="2">Panfletagem</option>
+                  </select>
+                  <input type="text" class="form-control bg-dark text-white" placeholder="Valor" id="valor">
+                  <input type="datetime-local" name="dataInvestimento" id="dataInvestimento" class="form-control bg-dark text-white">
+                  <textarea class="form-control bg-dark text-white" id="detalhesMotivacional" rows="3" placeholder="Detalhes do Investimento"></textarea>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+                  <!-- Adicione mais botões de ação, se necessário -->
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+<div class="container-listagem">
+  <div class="container-vendas">
+    <h2>Ultimos Registros de Vendas</h2>
+    <hr>
+    {%if vendas %}
+ {% for venda in vendas %}
+  <div class="card bg-dark text-white">
+    <div class="card-body">
+      <div class="container-nomes">
+        <p>{{venda.nome}}</p>
+        <p>{{venda.vendedor}}</p>
+      </div>
+      <div class="container-plain">
+        <p>Plano</p>
+        <p>{{venda.plano}}</p>
+      </div>
+          <div class="container-data">
+            <p>Data</p>
+            <p>{{venda.data}}</p>
+          </div>
+    </div>
+  </div>
+  {%endfor%}
+  {%else%}
+    <p>Você ainda não realizou nenhuma venda</p>
+{%endif%}
+  </div>
+  <div class="container-investiments">
+    <h2>Ultimos registros de Investimento</h2>
+    <hr>
+    {% if investimentos %}
+      {% for investimento in investimentos %}
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <div class="card-body">
+            <div class="container-nomes">
+              <p>{{investimento.tipo}}</p>
+              <p>{{investimento.valor}}</p>
+            </div>
+            <div class="container-plain">
+              <p>Descrição</p>
+              <p>{{investimento.data}}</p>
+            </div>
+                <div class="container-data">
+                  <p>Data</p>
+                  <p>{{investimento.descricao}}</p>
+                </div>
+        </div>
+      </div>
+  </div>
+  {%endfor%}
+  {%else%}
+  <p>Você ainda não realizou nenhum Investimento</p>
+  {%endif%}
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{{ url_for('static', filename='js/vendas.js') }}"></script>
+{% endblock %} 

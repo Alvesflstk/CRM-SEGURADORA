@@ -1,0 +1,143 @@
+{% include "base.html" %} {% block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home-page.css') }}">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="container">
+    <div class="container-header">
+        <div class="card-box" id="box1">
+            <div class="element-internal" id="nav-box-card1">
+                <span></span>
+                <p>Investimento Base</p>
+                
+            </div>
+            <div class="element-internal" id="values-literais">
+                <label>{{lista_dados[1]}}</label><label class="porCent"><span class="porCent">0.00%</span><span><i class="ph-duotone ph-caret-up"></i></span></label>
+            </div>
+        </div>
+        <div class="card-box" id="box2">
+            <div class="element-internal" id="nav-box-card2">
+                <span></span>
+                <p>Retorno</p>
+                
+            </div>
+            <div class="element-internal" id="values-literais">
+                <label>{{lista_dados[2]}}</label><label class="porCent"><span class="porCent">0.00%</span><span><i class="ph-duotone ph-caret-down"></i></span></label>
+            </div>
+        </div>
+        <div class="card-box" id="box3">
+            <div class="element-internal" id="nav-box-card3">
+                <span></span>
+                <p>Alcançados</p>
+                
+            </div>
+            <div class="element-internal" id="values-literais">
+                <label>{{lista_dados[0]}}</label><label class="porCent"><span class="porCent">0.00%</span><span><i class="ph-duotone ph-caret-up"></i></span></label>
+            </div>
+        </div>
+        <div class="card-box" id="box4">
+            <div class="element-internal" id="nav-box-card4">
+                <span></span>
+                <p>Meta</p>
+                
+            </div>
+            <div class="element-internal" id="values-literais">
+                <label>00000</label><label class="porCent"><span class="porCent">100%</span><span><i class="ph-duotone ph-caret-up"></i></span></label>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-database">
+        <div class="container-banner-pgp">
+            <div class="container-banner" id="graphics">
+                <canvas id="myChart" width="400"></canvas>
+                
+            </div>
+        <div class="banner-propaganda">
+            <p>
+                Especialistas em finanças dizem que, um bom controle do seu negócio é crucial para construir Riqueza.
+            </p>
+            <img src="{{ url_for('static', filename='images/image-banner.png') }}" alt="imgbanner">
+        </div>    
+        </div>
+        <div class="container-banner" id="frame-left">
+            <div class="title-frame-right">
+                <h6>Previsão: R$ 0000000</h6>
+            </div>
+            
+            <div class="loader">
+                <div class="loader-inner"> 
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                  <div class="loader-block"></div>
+                </div>
+              </div>
+              <span class="legend">Verificação em tempo Real</span>
+
+            <div class="refresh-balance">
+                <div class="mini-balance" id="balance1">
+                    <div class="title-mini-balance">
+                        <i class="ph-duotone ph-seal-check"></i>
+                        <p>Investido</p>
+                    </div>
+                    <div class="body-mini-balance">
+                        <span>{{lista_dados[1]}}</span><span>0%</span>
+                    </div>
+                </div>
+                <div class="mini-balance" id="balance2">
+                    <div class="title-mini-balance">
+                        <i class="ph-duotone ph-circles-three-plus"></i>
+                        <p>Gastos</p>
+                    </div>
+                    <div class="body-mini-balance">
+                        <span>{{lista_dados[1]}}</span><span>0%</span>
+                    </div>
+                </div>
+                <div class="mini-balance" id="balance3">
+                    <div class="title-mini-balance">
+                        <i class="ph-duotone ph-clock-countdown"></i>
+                        <p>Aguardando</p>
+                    </div>
+                    <div class="body-mini-balance">
+                        <span>0.000</span><span>0%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <canvas id="line-chart"></canvas>
+
+
+    <footer>
+        <div class="class-sobre-empresa">
+            <p>&copy; gbsitems todos os direitos reservados </p>
+            <p>01/01/2023</p>
+        </div>
+        <p>em breve nas redes sociais</p>
+    </footer>
+</div>
+<script src="{{ url_for('static', filename='js/homepage.js') }}"></script>
+
+
+{% endblock %}

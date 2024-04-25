@@ -1,0 +1,98 @@
+:root{
+
+    --color-padrao-background:#15161A;
+    --color-padrao-font:#ffffff;
+    --color-hover:#83c5be;
+    --font-padrao-application:"JetBrains Mono";
+}
+
+
+.modal-dialog{
+    color: #ffffff;
+    font-family: var(--font-padrao-application);
+}
+
+.container-header-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: right;
+    margin-top: 10px;
+}
+
+.btn-primary{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-padrao-application);
+}
+
+
+.close{
+    border: none;
+    font-family: var(--font-padrao-application);
+    
+    background-color: transparent;
+}
+
+.close span{
+    font-size: 30px;
+    color: #ffffff;
+}
+
+
+
+.modal-content .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.5); 
+  }
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container-vendas{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.container-vendas h2{
+    font-family: var(--font-padrao-application);
+    color: #e2e1e1;
+
+}
+.container-investiments{
+    margin-top: 15px;
+}
+.container-investiments h2{
+    font-family: var(--font-padrao-application);
+    color: #ffffff;
+    margin-top: 5px;
+}
+
+/* configurações de cards  */
+.container-listagem{
+    margin-top: 50px;
+}
+
+.card-body{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: var(--font-padrao-application);
+}
+
+
+.container-nomes p:first-child{
+    font-size: 20px;
+}
+
+
+.container-nomes p:last-child{
+    font-size: 13px;
+}

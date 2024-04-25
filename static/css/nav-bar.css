@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+:root{
+
+    --color-padrao-background:#15161A;
+    --color-padrao-font:#ffffff;
+    --color-hover:#83c5be;
+    --font-padrao-application:"JetBrains Mono";
+}
+nav{
+    background-color: var(--color-padrao-background);
+    font-family: var(--font-padrao-application);
+}
+
+.container-fluid{
+    background-color: var(--color-padrao-background);
+    font-family: var(--font-padrao-application);
+}
+
+
+.nav-link{
+    color: var(--color-padrao-font);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    
+}
+
+.nav-link:hover{
+    color: var(--color-hover);
+}
+
+
+
+.container-simbol{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+    color: #ffffff;
+    position: relative;
+    text-decoration: none;
+}
+
+.container-simbol p{
+    background-color: rgba(131, 197, 190,0.3);
+    border: rgb(131, 197, 190) 1px solid;
+    border-radius: 10px;
+    font-size: 10px;
+    text-align: center;
+}

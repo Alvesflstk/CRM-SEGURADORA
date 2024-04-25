@@ -1,0 +1,36 @@
+:root{
+
+    --color-padrao-background:#15161A;
+    --color-padrao-font:#ffffff;
+    --color-hover:#83c5be;
+    --font-padrao-application:"JetBrains Mono";
+}
+
+.container-father-vendas{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.container-father-vendas h2{
+    font-family: var(--font-padrao-application);
+    color: #e9e5e5;
+}
+
+.card-body{
+    font-family: var(--font-padrao-application);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.container-title{
+    font-family: var(--font-padrao-application);
+    color: #c5c1c1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

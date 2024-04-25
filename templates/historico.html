@@ -1,0 +1,29 @@
+{% include "base.html" %} {% block content%}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/historico.css') }}">
+<div class="container">
+    <div class="container-main">
+        <div class="container-father-vendas">
+            <div class="container-title">
+                <h2>Ultimos Faturamentos</h2>
+                <p> esse são seus ultimos 10 registros </p>
+            </div>
+            {% if vendas_Historico %}
+            {% for product in vendas_Historico %}
+                <div class="card bg-primary text-white" id="card-template">
+                  <div class="card-body">
+                    <p>{{product.nome}}</p>
+                    <p>{{product.data}}</p>
+                    <p>{{product.plano}}</p>
+                  </div>
+                </div>
+                {%endfor%}
+                {%else%}
+                <p>você ainda não fez nenhuma venda</p>
+                {%endif%}
+        </div>
+        </div>
+    </div>
+
+
+<script src="{{ url_for('static', filename='js/historico.js') }}"></script>
+{% endblock %} 
