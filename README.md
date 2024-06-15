@@ -92,5 +92,8 @@ Certifique-se de ter o [Python](https://www.python.org/downloads/) (versão 3.6+
 
 Antes de rodar a aplicação, configure as variáveis de ambiente conforme mencionado na seção de instalação. Isso inclui configurar a URL do banco de dados e qualquer outra configuração específica do projeto.
 
+## view do projeto
+<img src="https://github.com/Alvesflstk/CRM-SEGURADORA/assets/111323514/6ac429f4-384f-4b3b-bdd3-068c99ee97c9">
+
 
 
