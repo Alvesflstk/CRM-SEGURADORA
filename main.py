@@ -1,12 +1,12 @@
 from app import app, db
-from app.models import table_vendas , table_investimentos , calcular_ivestimentos,calcular_comicao
+from app.models import TableVendas , TableInvestimentos , calcular_ivestimentos,calcular_comicao
 from flask import render_template, redirect
 
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
     # calculo de pessoas alcançadas --------------------------
-    indexDeMultiplicacao = table_vendas.query.filter().all() 
+    indexDeMultiplicacao = TableVendas.query.filter().all() 
     valor_de_vendas = len(indexDeMultiplicacao)
     # --------------------------------------------------------
     # calculo de soma de comissão ----------------------------
@@ -18,13 +18,13 @@ def home():
 
 @app.route('/vendaslp', methods=['GET', 'POST'])
 def vendaslp():
-    vendas = table_vendas.query.limit(4).all()
-    investimentos = table_investimentos.query.limit(4).all()
+    vendas = TableVendas.query.limit(4).all()
+    investimentos = TableInvestimentos.query.limit(4).all()
     return render_template('vendaslp.html',vendas=vendas,investimentos=investimentos)
 
 @app.route('/historico', methods=['GET', 'POST'])
 def historico():
-    vendas_Historico = table_vendas.query.limit(10).all()
+    vendas_Historico = TableVendas.query.limit(10).all()
     return render_template('historico.html',vendas_Historico=vendas_Historico)
 
 
